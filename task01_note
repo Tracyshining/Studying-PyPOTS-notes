@@ -1,0 +1,17 @@
+Task 01 studying note.
+I became aware of time-series prediction while conducting research on microgrid scheduling. Initially, I only heard about the LSTM model.
+During the learning process of task1, I learned that time-series data can be classified into multiple types based on their characteristics, including univariate and multivariate, as well as equally-spaced and unequally-spaced.
+The research I'm doing is relatively simple, focusing on univariate and equally-spaced time-series data.
+This classification method is highly beneficial as it enables us to quickly identify the characteristics of the data when dealing with specific problems and select appropriate analysis methods accordingly. 
+Time-series data analysis can encompass a variety of tasks, such as prediction, classification, clustering, anomaly detection, generation, and imputation.
+
+Secondly, I got to know about PyPOTS, an open-source toolbox specifically designed for handling Partially Observed Time Series (POTS).
+It is dedicated to processing time-series data with missing values. 
+PyPOTS offers a variety of imputation algorithms that can effectively recover missing data, thereby enhancing the accuracy of subsequent analysis.
+In addition, PyPOTS not only supports missing value imputation but also covers core tasks such as prediction, classification, clustering, and anomaly detection.
+
+我因为研究微电网调度而了解到时序预测，一开始只是听说了lstm模型.
+在task1学习中，我了解到时间序列数据可以根据其特征分为多种类型，包括单变量和多变量、等间隔和非等间隔，我做的研究比较简单，是单变量等间隔的。
+这种分类方式有助于在处理具体问题时，快速定位数据特点，选择合适的分析方法。它可以分析涵盖多种任务，如预测、分类、聚类、异常检测、生成和插补等。
+其次是了解了 PyPOTS，其是一个专为处理部分观测时间序列（POTS）而设计的开源工具箱，专注于处理带有缺失值的时间序列数据。
+它提供了多种填补算法，能够有效恢复缺失数据，从而提高后续分析的准确性。此外，PyPOTS不仅支持缺失值填补，还涵盖了预测、分类、聚类和异常检测等核心任务。
