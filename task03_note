@@ -1,1 +1,32 @@
+Task03 note
+The two-stage processing refers to the practice of handling time-series data. Raw data might have flaws like missing values or anomalies, which, although potentially informative (e.g., missing values might indicate equipment issues), often negatively impact model training and prevent direct end-to-end modeling with neural networks. Many time-series prediction and classification algorithms can't handle missing data. 
+Therefore, the process is divided into two stages: first, preprocessing the time-series data in the upstream stage for specific purposes, and then conducting downstream tasks prediction like or classification.
+The test set has a positive - to - negative sample ratio of 111:689, with positive samples accounting for 0.13875 of the total, indicating an imbalanced binary classification problem. 
+Hence, the evaluation metrics used are ROC - AUC and PR - AUC.
+The LSTM model's ROC - AUC on the test set is 0.6311, and the PR - AUC is 0.2788. 
+These results may vary from others, but that's perfectly fine.
+As mentioned in task1, I'm studying microgrid scheduling. 
+I found that the LSTM model, which I've been eager to learn, can be applied to load, photovoltaic, and wind power forecasting. 
+LSTM, a special type of RNN, is designed for sequence data and effectively addresses the gradient vanishing and exploding problems in traditional RNNs. 
+It consists of three gate units (forget gate, input gate, and output gate) and a cell state, enabling it to handle long-term dependencies in sequences.
+
+Task2代码跑得很顺利，是，运用到LTSM model，关于下游任务的两阶段处理
+什么是两阶段 (two-stage) 处理
+一般采集到的时序数据可能会有"瑕疵", 例如包含缺失值, 异常数据点和样本等等, 虽然这些"瑕疵"也属于数据的特性 (例如缺失值的模式可能代表了设备的异常情况), 
+但在一般的建模中是有害的不被我们需要的, 会阻碍算法的学习甚至让我们无法使用神经网络直接对其进行端到端的建模 (例如很多的时序预测算法和分类算法无法处理缺失值), 
+这时就需要我们在上游先对时序进行有特别目的的再处理, 然后进行下游任务(例如预测, 分类等)建模, 这样的建模处理分就被分为了两个阶段.
+
+结果：
+test_set中的正负样本比例为111:689, 正样本占样本数量的0.13875, 所以这是一个不平衡的二分类问题, 故我们在此使用ROC-AUC和PR-AUC作为评价指标
+
+LSTM在测试集上的ROC-AUC为: 0.6311
+
+LSTM在测试集上的PR-AUC为: 0.2788
+
+的确会和别人的有些不同，请不要责怪你的电脑:)
+
+LSTM model 是这次学习我最想学习的部分，正如task1所说，我正在研究微电网调度，LSTM可以用于负载，光伏，风力预测等等
+LSTM是一种特殊的循环神经网络（RNN），主要用于处理序列数据，能够有效解决传统RNN中的梯度消失和梯度爆炸问题。
+LSTM的核心结构包括三个门控单元：遗忘门、输入门和输出门，以及一个细胞状态（cell state）。这些机制使得LSTM能够更好地处理序列中的长期依赖关系
+
 
