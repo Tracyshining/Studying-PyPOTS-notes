@@ -1,1 +1,7 @@
-
+Task 4 is running very slowly, and it is related to end-to-end learning for downstream tasks.
+The dataset used is preprocess_physionet2012. This time, BRITS is used for classification.
+BRITS (Bidirectional Recurrent Imputation for Time Series) is a deep learning model for missing value imputation in time series data. It employs a bidirectional recurrent neural network (RNN) structure to handle missing values in time series data. The model uses recurrent dynamics to effectively estimate missing values in multivariate time series without imposing specific assumptions. Instead, it directly learns the missing values in the bidirectional recurrent dynamic system. BRITS treats missing values as variables in a bidirectional RNN graph, thereby obtaining delayed gradients of missing values in both forward and backward directions, making the imputation of missing values more accurate.
+When training the model using PyPots, the following issue was encountered:
+UserWarning: h5py is running against HDF5 1.14.6 when it was built against 1.14.5. This may cause problems.
+Solution: Install the version of HDF5 that matches h5py using the following command:
+conda install hdf5=1.14.5
