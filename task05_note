@@ -1,0 +1,56 @@
+Task 5
+The code for Task 5 runs smoothly. Taking the synthetic eICU dataset as an example, this demonstrates how to preprocess custom medical time-series data into the input format required by the PyPOTS framework and perform imputation using PyPOTS.
+About the eICU Dataset
+The eICU Collaborative Research Database is a multi-center open-source database for intensive care research. It contains monitoring records of patients in intensive care units (ICUs) from multiple hospitals and is an important resource for medical time-series research. To protect patient privacy, the data has been de-identified, but its structure remains consistent with real medical data.
+Reference
+Pollard TJ, Johnson AEW, Raffa JD, Celi LA, Mark RG, Badawi O. (2018). The eICU Collaborative Research Database: A multi-center critical care database for research. Scientific Data. DOI: 10.1038/sdata.2018.178
+Task Objective
+The objective of this task is to preprocess tabular medical time-series data into a format usable by the PyPOTS framework, perform imputation using PyPOTS, and generate datasets for subsequent analysis or model training.
+Main Steps
+Data Loading
+Before starting, we need to load the raw medical time-series data. These data are typically stored in tabular form, such as CSV files. When loading the data, focus on the following:
+Features: Measurements at each time step, such as heart rate, blood pressure, etc.
+Labels: For example, the diagnosis results or treatment outcomes of patients.
+Sample Identifiers: Unique identifiers used to distinguish different patients.
+Constructing a 3D Tensor
+To process the data using PyPOTS, we need to convert it into a 3D tensor format (n_samples, n_steps, n_features). The specific steps are as follows:
+Align Time Steps: Ensure that all samples have consistent time step lengths. If some samples have shorter time steps, fill the missing values to complete them.
+Construct the Tensor: Rearrange the data into a 3D tensor.
+Data Imputation
+Use the imputation algorithms provided by PyPOTS to fill in the missing values in the tensor. PyPOTS offers various imputation methods, such as the BRITS model based on deep learning.
+Reconstructing the DataFrame Structure
+Convert the imputed tensor back into DataFrame format, retaining sample IDs, time steps, features, and labels.
+Outcome Explanation
+After completing the above steps, you will obtain three preprocessed datasets:
+df_train_imputed: Imputation results for the training set
+df_val_imputed: Imputation results for the validation set
+df_test_imputed: Imputation results for the test set
+
+Task5代码跑得很顺利，以合成的 eICU 数据集为例，演示如何将自定义的医疗时间序列数据预处理为 [PyPOTS](https://github.com/WenjieDu/PyPOTS) 框架所需的输入格式，并使用 PyPOTS 进行插补。
+eICU 数据集是一个用于重症监护研究的多中心开源数据库。它包含了来自多家医院的重症监护病房（ICU）患者的监护记录，是医疗时间序列研究的重要资源。为了保护患者隐私，数据经过了脱敏处理，但数据结构仍然与真实的医疗数据保持一致。
+参考文献
+Pollard TJ, Johnson AEW, Raffa JD, Celi LA, Mark RG, Badawi O. (2018). The eICU Collaborative Research Database: A multi-center critical care database for research. Scientific Data. DOI: 10.1038/sdata.2018.178
+________________________________________
+任务目标
+本任务的目标是将表格形式的医疗时序数据预处理为 PyPOTS 框架可用的格式，使用 PyPOTS 进行缺失值插补，并生成可供后续分析或模型训练的数据集。
+________________________________________
+主要步骤
+1. 数据加载
+在开始之前，我们需要加载原始的医疗时序数据。这些数据通常以表格形式存储，例如 CSV 文件。加载数据时，重点关注以下内容：
+•	特征：每个时间步的测量值，例如心率、血压等。
+•	标签：例如患者的诊断结果或治疗效果。
+•	样本标识：用于区分不同患者的唯一标识符。
+2. 构建三维张量
+为了使用 PyPOTS 进行处理，我们需要将数据转换为三维张量的形式 (n_samples, n_steps, n_features)。具体步骤如下：
+•	对齐时间步：确保所有样本的时间步长度一致。如果某些样本的时间步较短，可以通过填充缺失值来补全。
+•	构造张量：将数据重新排列成三维张量。
+3. 数据插补
+使用 PyPOTS 提供的插补算法对张量中的缺失值进行填充。PyPOTS 提供了多种插补方法，例如基于深度学习的 BRITS 模型。
+4. 还原 DataFrame 结构
+将插补后的张量转换回 DataFrame 形式，保留样本 ID、时间步、特征和标签。
+结果说明
+完成上述步骤后，你将得到三个预处理完成的数据集：
+•	df_train_imputed：训练集插补结果
+•	df_val_imputed：验证集插补结果
+•	df_test_imputed：测试集插补结果
+
