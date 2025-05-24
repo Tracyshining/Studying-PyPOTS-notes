@@ -1,1 +1,49 @@
+Task 6 is two analysis methods for custom dataset downstream tasks, which will be based on the custom dataset * * in Task 05 for downstream task analysis, mainly including:
+1. Use LSTM to classify based on interpolated dataset
+2. End to end learning classification of raw data with missing values based on the TimesNet model in PyPOTS
+The eICU dataset is a multi center open source database used for intensive care research. It contains monitoring records of intensive care unit (ICU) patients from multiple hospitals and is an important resource for medical time series research. In order to protect patient privacy, the data has undergone desensitization processing, but the data structure remains consistent with real medical data.
+references
+
+Wu, H., Hu, T., Liu, Y., Zhou, H., Wang, J., & Long, M. (2023). [TimesNet: Temporal 2d-variation modeling for general time series analysis](https://openreview.net/forum?id=ju_Uqw384Oq)
+result
+The ratio of positive and negative samples in test_det is 62:552, with positive samples accounting for 0.10097719869706841 of the sample size. Therefore, this is an unbalanced binary classification problem, and we use ROC-AUC and PR-AUC as evaluation indicators here
+The ROC-AUC of LSTM on the test set is 0.4755
+The PR-AUC of LSTM on the test set is 0.1672
+Finished training. The best model is from epoch#3.
+The ROC-AUC of TimesNet on the test set is 0.5886
+The PR-AUC of TimesNet on the test set is 0.4232
+
+Task6是自定义数据集下游任务的两种分析方法，将基于Task05中自定义的数据集** 进行下游任务分析，主要包括：
+1. 使用LSTM基于插补后的数据集进行分类
+2. 基于PyPOTS中TimesNet模型对带缺失值的原数据进行端到端学习的分类
+
+eICU 数据集是一个用于重症监护研究的多中心开源数据库。它包含了来自多家医院的重症监护病房（ICU）患者的监护记录，是医疗时间序列研究的重要资源。为了保护患者隐私，数据经过了脱敏处理，但数据结构仍然与真实的医疗数据保持一致。
+参考文献
+Wu, H., Hu, T., Liu, Y., Zhou, H., Wang, J., & Long, M. (2023). [TimesNet: Temporal 2d-variation modeling for general time series analysis](https://openreview.net/forum?id=ju_Uqw384Oq)
+该文提出了适用于多个时序分析任务的模型结构TimesNet. 文章被人工智能顶级会议ICLR 2023收录. 截止2025年5月Google Scholar上引用1300+.
+
+________________________________________
+结果
+test_set中的正负样本比例为62:552, 正样本占样本数量的0.10097719869706841, 所以这是一个不平衡的二分类问题, 故我们在此使用ROC-AUC和PR-AUC作为评价指标
+
+LSTM在测试集上的ROC-AUC为: 0.4755
+
+LSTM在测试集上的PR-AUC为: 0.1672
+
+2025-05-20 16:18:37 [INFO]: Epoch 001 - training loss (CrossEntropy): 0.3290, validation CrossEntropy: 0.2604
+2025-05-20 16:20:09 [INFO]: Epoch 002 - training loss (CrossEntropy): 0.2780, validation CrossEntropy: 0.2721
+2025-05-20 16:21:41 [INFO]: Epoch 003 - training loss (CrossEntropy): 0.2581, validation CrossEntropy: 0.2497
+2025-05-20 16:23:15 [INFO]: Epoch 004 - training loss (CrossEntropy): 0.2315, validation CrossEntropy: 0.2550
+2025-05-20 16:24:19 [INFO]: Epoch 005 - training loss (CrossEntropy): 0.2130, validation CrossEntropy: 0.2800
+2025-05-20 16:25:42 [INFO]: Epoch 006 - training loss (CrossEntropy): 0.2042, validation CrossEntropy: 0.2579
+2025-05-20 16:27:19 [INFO]: Epoch 007 - training loss (CrossEntropy): 0.1839, validation CrossEntropy: 0.2830
+2025-05-20 16:28:48 [INFO]: Epoch 008 - training loss (CrossEntropy): 0.1606, validation CrossEntropy: 0.2882
+2025-05-20 16:28:48 [INFO]: Exceeded the training patience. Terminating the training procedure...
+2025-05-20 16:28:48 [INFO]: Finished training. The best model is from epoch#3.
+2025-05-20 16:28:48 [INFO]: Saved the model to result_saving/classification/timesnet\20250520_T161800\TimesNet.pypots
+
+TimesNet在测试集上的ROC-AUC为: 0.5886
+
+TimesNet在测试集上的PR-AUC为: 0.4232
+
 
